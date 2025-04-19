@@ -23,6 +23,18 @@ class UserList extends StatelessWidget {
             Navigator.popAndPushNamed(context, "/create");
           },
         ),
+        leading: BackButton(
+          onPressed: () {
+            Navigator.popAndPushNamed(context, "/view");
+          },
+        ),
+        leading: BackButton(
+          onPressed: () {
+            userProvider.indexUser = null;
+            userProvider.users.removeAt(indexBuilder);
+            Navigator.popAndPushNamed(context, "/create");
+          },
+        ),
       ),
       body: ListView.builder(
           itemCount: usersLength,
